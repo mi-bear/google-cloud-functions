@@ -76,3 +76,28 @@ example:
 $ gcloud beta functions deploy bear-talk --project bear-development --trigger-http --stage-bucket bear-development --entry-point bearTalk
 ```
 
+## Road to Go
+https://github.com/GoogleCloudPlatform/cloud-functions-go
+
+### Testing
+
+http://localhost:8080/execute  
+
+```
+$ make godev
+```
+
+http://localhost:1234/execute  
+
+```
+$ go run main.go -addr=localhost:8080
+```
+
+### Deploy
+
+```
+$ make
+```
+
+`function.zip` をGoogleCloudFunctionsにアップロードする。
+
