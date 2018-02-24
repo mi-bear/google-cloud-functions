@@ -90,7 +90,7 @@ $ make godev
 http://localhost:1234/execute  
 
 ```
-$ go run main.go -addr=localhost:8080
+$ go run main.go -addr=localhost:1234
 ```
 
 ### Deploy
