@@ -2,16 +2,22 @@ const config = require('./config.json');
 
 exports.bearTalk = (req, res) => {
   return Promise.resolve().then(() => {
+    // method
     if (req.method !== 'POST') {
       const error = new Error('Only POST! bear is angry!!!');
       error.code = 405;
       throw error;
     }
+
+    // verify
     verify(req.body);
+
     return talk(req.body);
   }).then((response) => {
+    // response
     res.json(response);
   }).catch((err) => {
+    // errors
     console.error(err);
     res.status(err.code || 500).send(err);
     return Promise.reject(err);
@@ -27,7 +33,7 @@ function verify(body) {
 }
 
 function talk(body) {
-  // TODO: message
+  // TODO: add message valiations
   let response;
   switch (body.text) {
     case 'のどがかわいた':
