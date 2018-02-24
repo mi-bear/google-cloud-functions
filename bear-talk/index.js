@@ -8,7 +8,6 @@ exports.bearTalk = (req, res) => {
       error.code = 405;
       throw error;
     }
-
     // verify
     verify(req.body);
 
